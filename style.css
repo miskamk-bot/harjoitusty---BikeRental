@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 1.5rem;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: 1px solid #888;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+button.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Pyörälista ruudukkona ja kortit */
+#bike-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.bike-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.bike-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 4px;
+  background-color: #eee;
+}
+
+.bike-card h3 {
+  margin: 0.5rem 0;
+}
+
+.bike-card p {
+  margin: 0.25rem 0;
+  color: #555;
+}
+
+/* Suodattimet */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.filters div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.filters input[type="text"],
+.filters select {
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Admin-lomakkeet */
+.admin-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 500px;
+  margin-top: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-submit {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+}
+
+#add-status {
+  margin-top: 1rem;
+  font-weight: 500;
+}

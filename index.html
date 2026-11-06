@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BikeRental</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🚲 BikeRental</h1>
+    <nav>
+      <button id="btn-catalog" class="active">Selaa pyöriä</button>
+      <button id="btn-admin">Admin</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Asiakasnäkymä -->
+    <section id="catalog-view">
+      <h2>Selaa pyöriä</h2>
+
+      <!-- Suodattimet -->
+      <div class="filters">
+        <div>
+          <label for="search-input">Hae nimellä:</label>
+          <input type="text" id="search-input" placeholder="Esim. Tunturi...">
+        </div>
+
+        <div>
+          <label for="type-filter">Tyyppi:</label>
+          <select id="type-filter">
+            <option value="all">Kaikki tyypit</option>
+            <option value="City">Kaupunkipyörä</option>
+            <option value="Mountain">Maastopyörä</option>
+            <option value="Electric">Sähköpyörä</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="price-filter">Max hinta (€/h):</label>
+          <input type="range" id="price-filter" min="0" max="30" step="1" value="30">
+          <span id="price-val">30 €/h</span>
+        </div>
+      </div>
+
+      <!-- Pyörälista -->
+      <div id="bike-list">
+        <p>Ladataan pyöriä...</p>
+      </div>
+    </section>
+
+    <!-- Admin-näkymä -->
+    <section id="admin-view" class="hidden">
+      <h2>Ylläpito</h2>
+
+      <!-- Kirjautumislaatikko -->
+      <div id="admin-login-box" class="admin-card">
+        <h3>Kirjaudu ylläpitoon</h3>
+        <form id="admin-login-form">
+          <div class="form-group">
+            <label for="admin-pass-input">Ylläpidon salasana:</label>
+            <input type="password" id="admin-pass-input" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn-submit">Kirjaudu sisään</button>
+        </form>
+        <p id="login-error" style="color: red; margin-top: 0.5rem;"></p>
+      </div>
+
+      <!-- Varsinainen admin-paneeli -->
+      <div id="admin-panel" class="hidden">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <p>Ylläpitotila aktiivinen</p>
+          <button id="btn-logout" style="background-color: #6c757d; color: white;">Kirjaudu ulos</button>
+        </div>
+
+        <div class="admin-card">
+          <h3>Lisää uusi pyörä</h3>
+          <form id="add-bike-form">
+            <div class="form-group">
+              <label for="bike-name">Pyörän nimi / malli:</label>
+              <input type="text" id="bike-name" placeholder="Esim. Helkama Kaunotar" required>
+            </div>
+
+            <div class="form-group">
+              <label for="bike-type">Tyyppi:</label>
+              <select id="bike-type" required>
+                <option value="City">Kaupunkipyörä</option>
+                <option value="Mountain">Maastopyörä</option>
+                <option value="Electric">Sähköpyörä</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="bike-price">Hinta (€/h):</label>
+              <input type="number" id="bike-price" step="0.5" placeholder="Esim. 8" required>
+            </div>
+
+            <div class="form-group">
+              <label for="bike-img">Kuvan URL (valinnainen):</label>
+              <input type="url" id="bike-img" placeholder="Jätä tyhjäksi oletuskuvaa varten">
+            </div>
+
+            <button type="submit" class="btn-submit">Lisää pyörä järjestelmään</button>
+          </form>
+          <p id="add-status"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
