@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 1.5rem;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: 1px solid #888;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+button.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.hidden {
+  display: none;
+}
