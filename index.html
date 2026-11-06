@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BikeRental</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🚲 BikeRental</h1>
+    <nav>
+      <button id="btn-catalog" class="active">Selaa pyöriä</button>
+      <button id="btn-admin">Admin</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Asiakasnäkymä -->
+    <section id="catalog-view">
+      <h2>Selaa pyöriä</h2>
+
+      <!-- Suodattimet (Issue 3) -->
+      <div class="filters">
+        <div>
+          <label for="search-input">Hae nimellä:</label>
+          <input type="text" id="search-input" placeholder="Esim. Tunturi...">
+        </div>
+
+        <div>
+          <label for="type-filter">Tyyppi:</label>
+          <select id="type-filter">
+            <option value="all">Kaikki tyypit</option>
+            <option value="City">Kaupunkipyörä</option>
+            <option value="Mountain">Maastopyörä</option>
+            <option value="Electric">Sähköpyörä</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="price-filter">Max hinta (€/h):</label>
+          <input type="range" id="price-filter" min="0" max="30" step="1" value="30">
+          <span id="price-val">30 €/h</span>
+        </div>
+      </div>
+
+      <!-- Pyörälista (Issue 2) -->
+      <div id="bike-list">
+        <p>Ladataan pyöriä...</p>
+      </div>
+    </section>
+
+    <!-- Admin-näkymä (aluksi piilossa) -->
+    <section id="admin-view" class="hidden">
+      <h2>Ylläpito</h2>
+      <p>Admin-toiminnot tulevat tähän myöhemmin.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
